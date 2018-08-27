@@ -18,3 +18,4 @@ xampp，phpstudy等)
 ## 开发工具
 > 1.NotePad++
 > 2.phpstorm： [https://www.jetbrains.com/phpstorm/ ](https://www.jetbrains.com/phpstorm/ )
+> 3.Atom:[https://atom.io/](https://atom.io/)

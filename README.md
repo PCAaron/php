@@ -1,6 +1,11 @@
 # PHP
 > PHP：超文本预处理器
 
+## 开发环境
+> 常用的PHP环境搭建有：LAMP(Linux+Apache+MySQL+php)，LNMP(Linux+Nginx+MySQL+php)，LNAMP(
+Linux+Apache+Nginx+MySQL+php)，WAMP(Window+Apache+MySQL+php),独立安装，集成安装(wampserver，
+xampp，phpstudy等)
+
 ## 什么是集成环境包
 > 学习php需安装网页服务器、数据库服务器和php语言核心的解释器。而将这些合在一起的即集成环境包。
 常用的集成环境包有AppServ，PHPStudy，APMserv，XAMPP，WAMPServer等（代表的不同集成环境包的名字）。

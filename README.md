@@ -43,7 +43,9 @@ PHP 也允许使用短标记 <? 和 ?>，但不鼓励使用(因为目标服务�
 #### 三种复合类型
 > Array数组， Object对象， Callback/Callable类型 可调用
 #### 两种特殊类型
-> Resource资源类型， NULL 无类型
+> Resource资源类型， NULL 无类型    
+>  resource 是一种特殊变量，保存了到外部资源的一个引用,是通过专门的函数来建立和使用的，参见[get_resource_type()](http://php.net/manual/zh/function.get-resource-type.php)。
+由于资源类型变量保存有为打开文件、数据库连接、图形画布区域等的特殊句柄，因此将其它类型的值转换为资源没有意义。
 #### 伪类型与变量
 > mixed（混合类型），number（数字类型），callback（回调类型），array|object（数组|对象类型），void（无类型）
 #### 类型转换的判别
@@ -51,7 +53,7 @@ PHP 也允许使用短标记 <? 和 ?>，但不鼓励使用(因为目标服务�
 > 例如：1.查看某个表达式的值和类型，用[var_dump()](http://php.net/manual/zh/function.var-dump.php)函数;
 2.得到一个类型的表达方式，用[gettype()](http://php.net/manual/zh/function.gettype.php)
 3.检验某个类型，用is_type()函数
-4.变量强制转换为某个类型，[settype()](http://php.net/manual/zh/function.settype.php)函数
+4.变量强制转换为某个类型，[settype()](http://php.net/manual/zh/function.settype.php)函数，或在要转换的变量之前加上用括号括起来的目标类型。
 ### 变量
 1. 预定义变量
 2. 变量范围

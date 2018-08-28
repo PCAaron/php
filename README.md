@@ -31,21 +31,27 @@ xampp，phpstudy等)
 ## 语言参考
 ### 基本语法
 1. PHP标记
+> 当解析一个文件时，PHP 会寻找起始和结束标记，也就是 <?php 和 ?>，使得 PHP 可以被嵌入到各种不同的文档中去。（注：
+PHP 也允许使用短标记 <? 和 ?>，但不鼓励使用(因为目标服务器可能不支持短标记。为了代码的移植及发行，确保不要使用短标记。)。只有通过激活 php.ini 中的 [short_open_tag](http://php.net/manual/zh/ini.core.php#ini.short-open-tag) 配置指令或者在编译 PHP 时使用了配置选项 --enable-short-tags 时才能使用短标记。）   
+> 文件内容是纯 PHP 代码，最好在文件末尾删除 PHP 结束标记。（避免在 PHP 结束标记之后万一意外加入了空格或者换行符，会导致 PHP 开始输出这些空白）
 2. 从HTML中分离
-3. 指令分隔符
+3. 指令分隔符(;)
 4. 注释
 ### 类型
-1. Boolean布尔类型
-2. Integer整型
-3. Float浮点型
-4. String字符串
-5. Array数组
-6. Object对象
-7. Resource资源类型
-8. NULL
-9. Callback/Callable类型
-10. 伪类型与变量
-11. 类型转换的判别
+#### 四种标量类型
+> Boolean布尔类型，Integer整型， Float浮点型， String字符串
+#### 三种复合类型
+> Array数组， Object对象， Callback/Callable类型 可调用
+#### 两种特殊类型
+> Resource资源类型， NULL 无类型
+#### 伪类型与变量
+> mixed（混合类型），number（数字类型），callback（回调类型），array|object（数组|对象类型），void（无类型）
+#### 类型转换的判别
+> 变量的类型通常由 PHP 根据该变量使用的上下文在运行时决定的。  
+> 例如：1.查看某个表达式的值和类型，用[var_dump()](http://php.net/manual/zh/function.var-dump.php)函数;
+2.得到一个类型的表达方式，用[gettype()](http://php.net/manual/zh/function.gettype.php)
+3.检验某个类型，用is_type()函数
+4.变量强制转换为某个类型，[settype()](http://php.net/manual/zh/function.settype.php)函数
 ### 变量
 1. 预定义变量
 2. 变量范围

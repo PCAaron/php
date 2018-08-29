@@ -169,6 +169,7 @@ PHP 也允许使用短标记 <? 和 ?>，但不鼓励使用(因为目标服务�
 2. PHP 7错误处理
 ### 异常处理
 ### 生成器
+> 生成器函数的核心是yield关键字。它最简单的调用形式看起来像一个return申明，不同之处在于普通return会返回值并终止函数的执行，而yield会返回一个值给循环调用此生成器的代码并且只是暂停执行生成器函数。
 ### 引用的解释
 ### 预定义变量
 1. 超全局变量-在全部作用域中始终可用的内置变量
@@ -187,7 +188,7 @@ PHP 也允许使用短标记 <? 和 ?>，但不鼓励使用(因为目标服务�
 14. $argc-传递给脚本的参数数目
 15. $argv-传递给脚本的参数数组
 ### 预定义异常
-### 预定义接口
+### [预定义接口](http://php.net/manual/zh/reserved.interfaces.php)
 1. 遍历-Traversable（遍历）接口
 2. 迭代器-Iterator（迭代器）接口
 3. 聚合式迭代器-IteratorAggregate（聚合式迭代器）接口
@@ -196,7 +197,10 @@ PHP 也允许使用短标记 <? 和 ?>，但不鼓励使用(因为目标服务�
 6. Closure-Closure类
 7. 生成器-生成器类
 ### 上下文选项和参数
+> PHP 提供了多种上下文选项和参数，可用于所有的文件系统或数据流封装协议。上下文（Context）由 [stream_context_create()](http://php.net/manual/zh/function.stream-context-create.php) 创建。
+选项可通过 [stream_context_set_option()](http://php.net/manual/zh/function.stream-context-set-option.php) 设置，参数可通过 stream_context_set_params() 设置。
 ### 支持的协议和封装协议
+> PHP 带有很多内置 URL 风格的封装协议，可用于类似 fopen()、 copy()、 file_exists() 和 filesize() 的文件系统函数。 除了这些封装协议，还能通过 stream_wrapper_register() 来注册自定义的封装协议。
 1. file:// -访问本地文件系统
 2. http:// -访问HTTP（s）网址
 3. ftp:// -访问FTP(s)URLs

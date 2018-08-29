@@ -107,10 +107,12 @@ PHP 也允许使用短标记 <? 和 ?>，但不鼓励使用(因为目标服务�
 12. declare
 13. return
 14. require
+> require 和 include 几乎完全一样，除了处理失败的方式不同之外。require 在出错时产生 E_COMPILE_ERROR 级别的错误。换句话说将导致脚本中止而 include 只产生警告（E_WARNING），脚本会继续运行。
 15. include
 16. require_once
 17. include_once
 18. goto
+> goto 操作符可以用来跳转到程序中的另一位置。该目标位置可以用目标名称加上冒号来标记，而跳转指令是 goto 之后接上目标位置的标记。
 ### 函数
 1. 用户自定义函数
 2. 函数的参数
@@ -121,28 +123,36 @@ PHP 也允许使用短标记 <? 和 ?>，但不鼓励使用(因为目标服务�
 ### 类与对象
 1. 基本概念
 2. 属性
+> 属性声明是由关键字 public，protected 或者 private 开头，然后跟一个普通的变量声明来组成。详细[访问控制](http://php.net/manual/zh/language.oop5.visibility.php)
 3. 类常量
+> 可以把在类中始终保持不变的值定义为常量。在定义和使用常量的时候不需要使用 $ 符号。
 4. 类的自动加载
+>  [spl_autoload_register()](http://php.net/manual/zh/function.spl-autoload-register.php) 函数可以注册任意数量的自动加载器，当使用尚未被定义的类（class）和接口（interface）时自动去加载。
 5. 构造函数和析构函数
+> 构造函数：具有构造函数的类会在每次创建新对象时先调用此方法。（注：如果子类中定义了构造函数则不会隐式调用其父类的构造函数。要执行父类的构造函数，需要在子类的构造函数中调用 parent::__construct()。如果子类没有定义构造函数则会如同一个普通的类方法一样从父类继承（假如没有被定义为 private 的话）。）
 6. 访问控制（可见性）
+> 对属性或方法的访问控制，是通过在前面添加关键字 public（公有），protected（受保护）或 private（私有）来实现的。被定义为公有的类成员可以在任何地方被访问。被定义为受保护的类成员则可以被其自身以及其子类和父类访问。被定义为私有的类成员则只能被其定义所在的类访问。
 7. 对象继承
 8. 范围解析操作符（::）
+> 可以用于访问静态成员，类常量，还可以用于覆盖类中的属性和方法。
 9. Static（静态）关键字
 10. 抽象类
 11. 对象接口
-12. Trait
+12. Trait（代码复用）
 13. 匿名类
 14. 重载
 15. 遍历对象
-16. 魔术方法
+16. [魔术方法](http://php.net/manual/zh/language.oop5.magic.php)
+> __construct()， __destruct()， __call()， __callStatic()， __get()， __set()， __isset()， __unset()， __sleep()， __wakeup()， __toString()， __invoke()， __set_state()， __clone() 和 __debugInfo() 等方法(注：PHP 将所有以 __（两个下划线）开头的类方法保留为魔术方法。所以在定义类方法时，除了上述魔术方法，建议不要以 __ 为前缀。)
 17. Final 关键字
+> 如果父类中的方法被声明为 final，则子类无法覆盖该方法。如果一个类被声明为 final，则不能被继承。
 18. 对象复制
 19. 对象比较
 20. 类型约束
 21. 后期静态绑定
 22. 对象和引用
 23. 对象序列化
-24. OOP变更日志
+24. [OOP变更日志](http://php.net/manual/zh/language.oop5.changelog.php)
 ### 命名空间
 1. 定义命名空间
 2. 定义子命名空间

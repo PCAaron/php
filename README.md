@@ -215,4 +215,4 @@ PHP 也允许使用短标记 <? 和 ?>，但不鼓励使用(因为目标服务�
 12. expect:// -处理交互式的流
 
 ## 参考指南
-[php.net](php.net)
+[php.net](http://php.net/)
